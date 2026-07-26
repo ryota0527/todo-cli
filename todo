@@ -17,19 +17,19 @@ todo() {
     elif [[ $1 == "view" ]]; then
         if [[ $2 == "-a" ]]; then
             echo Current tasks:
-            ls $HOME/todo_cli/todo/
+            ls -N $HOME/todo_cli/todo/
             echo ==========
             echo Finished:
-            ls $HOME/todo_cli/finished/
+            ls -N $HOME/todo_cli/finished/
         else
-            ls $HOME/todo_cli/todo/
+            ls -N $HOME/todo_cli/todo/
         fi
 
     elif [[ $1 == "tag" ]]; then
         sed -i "1s|.*|#tag: $3|" "$HOME/todo_cli/todo/-$2"
 
     elif [[ $1 == "done" ]]; then
-        mv "~/todo_cli/todo/--$2" "$HOME/todo_cli/fin/-$2"
+        mv "~/todo_cli/todo/-$2" "$HOME/todo_cli/fin/-$2"
 
     elif [[ $1 == "cleanup" ]]; then
         rm -f $HOME/todo_cli/fin/*
