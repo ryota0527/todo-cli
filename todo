@@ -6,13 +6,13 @@ todo() {
         mkdir -p ~/todo_cli/finished
 
     elif [[ $1 == "make" ]]; then
-        touch "~/todo_cli/todo/--$2"
+        touch "~/todo_cli/todo/-$2"
 
     elif [[ $1 == "del" ]]; then
-        rm "~/todo_cli/todo/--$2"
+        rm "~/todo_cli/todo/-$2"
 
     elif [[ $1 == "note" ]]; then
-        vim "~/todo_cli/todo/--$2"
+        vim "~/todo_cli/todo/-$2"
 
     elif [[ $1 == "view" ]]; then
         if [[ $2 == "-a" ]]; then
@@ -26,10 +26,10 @@ todo() {
         fi
 
     elif [[ $1 == "tag" ]]; then
-        sed -i "1s|.*|#tag: $3|" "~/todo_cli/todo/--$2"
+        sed -i "1s|.*|#tag: $3|" "~/todo_cli/todo/-$2"
 
     elif [[ $1 == "done" ]]; then
-        mv "~/todo_cli/todo/--$2" "~/todo_cli/fin/--$2"
+        mv "~/todo_cli/todo/--$2" "~/todo_cli/fin/-$2"
 
     elif [[ $1 == "cleanup" ]]; then
         rm -f ~/todo_cli/fin/*
