@@ -24,3 +24,5 @@ To check the usage, type `todo` .
 | `todo cleanup` | remove finished todos |
 | `todo note <todo>` | add notes in the todo (vim opens) |
 | `todo tag <todo name> <tag name>` | add a tag on the todo |
+
+(* tag feature is not completely implemented yet. wait for the next update)
