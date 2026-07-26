@@ -16,11 +16,11 @@ To check the usage, type `todo` .
 
 | command | Description |
 |---------|-------------|
-| todo init | Initialize |
-| todo view [-a] | show current todos |
-| todo make <name> | make a new todo |
-| todo done <name> | mark a todo as finished |
-| todo del <name> | remove a todo which is not finished |
-| todo cleanup | remove finished todos |
-| todo note <todo> | add notes in the todo (vim opens) |
-| todo tag <todo name> <tag name> | add a tag on the todo |
+| `todo init` | Initialize |
+| `todo view [-a]` | show current todos |
+| `todo make <name>` | make a new todo |
+| `todo done <name>` | mark a todo as finished |
+| `todo del <name>` | remove a todo which is not finished |
+| `todo cleanup` | remove finished todos |
+| `todo note <todo>` | add notes in the todo (vim opens) |
+| `todo tag <todo name> <tag name>` | add a tag on the todo |
