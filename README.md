@@ -31,7 +31,7 @@ To check the usage, type `todo` .
 Initialize: `todo init`
 
 Add a todo "read an article": `todo make "read an article"`<br>
-(*Use quotation mark for todo's name!)
+(*Use quotation mark for todo's name, if it contains space!)
 
 View: `todo view`<br>
 (Output: `-read an article`)

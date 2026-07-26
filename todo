@@ -6,33 +6,55 @@ todo() {
         mkdir -p $HOME/todo_cli/finished
 
     elif [[ $1 == "make" ]]; then
-        touch "$HOME/todo_cli/todo/-$2"
+        shift
+
+        for task in "$@"; do
+            touch "$HOME/todo_cli/todo/-$task"
+        done
 
     elif [[ $1 == "del" ]]; then
-        rm "$HOME/todo_cli/todo/-$2"
+        shift
+
+        for target in "$@"; do
+            rm "$HOME/todo_cli/todo/-$target"
+        done
 
     elif [[ $1 == "note" ]]; then
         vim "$HOME/todo_cli/todo/-$2"
 
     elif [[ $1 == "view" ]]; then
         if [[ $2 == "-a" ]]; then
-            echo Current tasks:
-            ls -N $HOME/todo_cli/todo/
-            echo ==========
-            echo Finished:
-            ls -N $HOME/todo_cli/finished/
+            printf "==========\n"
+            printf "\n\033[1;33mCurrent tasks:\033[0m\n"
+            ls -1 -N $HOME/todo_cli/todo/
+            
+            printf "\n==========\n"
+
+            printf "\n\033[1;32mFinished:\033[0m\n"
+            ls -1 -N $HOME/todo_cli/finished/
+            printf "\n==========\n"
+
         else
-            ls -N $HOME/todo_cli/todo/
+            printf "==========\n"
+            printf "\n\033[1;33mCurrent tasks:\033[0m\n"
+            ls -1 -N $HOME/todo_cli/todo/
+            printf "\n==========\n"
         fi
 
     elif [[ $1 == "tag" ]]; then
-        sed -i "1s|.*|#tag: $3|" "$HOME/todo_cli/todo/-$2"
+        sed -i "1i\\
+        #tag: $3
+        " "$HOME/todo_cli/todo/-$2"
 
     elif [[ $1 == "done" ]]; then
-        mv "$HOME/todo_cli/todo/-$2" "$HOME/todo_cli/fin/-$2"
+        shift
+
+        for task in "$@"; do
+            mv "$HOME/todo_cli/todo/-$task" "$HOME/todo_cli/finished/-$task"
+        done
 
     elif [[ $1 == "cleanup" ]]; then
-        rm -f $HOME/todo_cli/fin/*
+        rm -f $HOME/todo_cli/finished/*
     else
         echo "Usage:"
         echo "  todo init"
