@@ -29,7 +29,7 @@ todo() {
         sed -i "1s|.*|#tag: $3|" "$HOME/todo_cli/todo/-$2"
 
     elif [[ $1 == "done" ]]; then
-        mv "~/todo_cli/todo/-$2" "$HOME/todo_cli/fin/-$2"
+        mv "$HOME/todo_cli/todo/-$2" "$HOME/todo_cli/fin/-$2"
 
     elif [[ $1 == "cleanup" ]]; then
         rm -f $HOME/todo_cli/fin/*
