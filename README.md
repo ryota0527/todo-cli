@@ -45,7 +45,7 @@ The editor used for `todo note` can be changed by editing constant `EDITOR_FOR_N
 
 - View again: `todo view`<br>
 (Output: `- read an article | Due: 2026-08-01 | Tag: research `)<br>
-![todo-cli demo](figs_ex/view_ex.png)
+![todo-cli demo](fig_ex/view_ex.png)
 
 - Add the link to the article as notes: `todo note "read an article"`<br>
 (One can paste the link in the todo file)
