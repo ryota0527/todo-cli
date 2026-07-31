@@ -4,6 +4,10 @@ todo() {
     if [[ $1 == "init" ]]; then
         mkdir -p $HOME/todo_cli/todo
         mkdir -p $HOME/todo_cli/finished
+        mkdir -p $HOME/todo_cli/data
+
+        touch $HOME/todo_cli/data/tags
+        touch $HOME/todo_cli/data/todos
 
     elif [[ $1 == "make" ]]; then
         shift
