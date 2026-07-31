@@ -32,7 +32,6 @@ def done(args):
 
         else:
             print(f"todo {arg} not found")
-            return
 
     with open(TODO_SAVE,"w", encoding="utf-8") as f:
         json.dump(todos, f, ensure_ascii=False, indent=4)
@@ -60,7 +59,7 @@ def clean():
     with open(TODO_SAVE,"r", encoding="utf-8") as f:
         todos = json.load(f)
 
-    if len(todos) == 100:
+    if len(todos) >= 300:
         t = [item for item in todos if not item["done"]]
 
         with open(TODO_SAVE,"w", encoding="utf-8") as f:

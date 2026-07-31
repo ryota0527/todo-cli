@@ -29,16 +29,16 @@ def show(al):
         c_tag = ""
         c_due = ""
         if c["tag"] != None:
-            c_tag = "  Tag: " + c["tag"]
+            c_tag = " | Tag: " + c["tag"]
 
         if c["due"] != None:
-            c_due = "  Due: " + c["due"]
+            c_due = " | Due: " + c["due"]
         
         if c["delay"] == True:
-            print(f"- {c_name}{c_tag}\033[31m{c_due}\033[0m")
+            print(f"- {c_name}\033[31m{c_due}\033[0m{c_tag}")
         
         else:
-            print(f"- {c_name}{c_tag}{c_due}")
+            print(f"- {c_name}{c_due}{c_tag}")
     
     print("\n")
 
@@ -50,14 +50,15 @@ def show(al):
             f_tag = ""
             f_due = ""
             if f["tag"] != None:
-                f_tag = "  Tag: " + f["tag"]
+                f_tag = " | Tag: " + f["tag"]
 
             elif f["due"] != None:
-                f_due = "  Due: " + f["due"]
+                f_due = " | Due: " + f["due"]
 
-            print(f"- {f_name}{f_tag}{f_due}")
+            print(f"- {f_name}{f_due}{f_tag}")
 
         print("\n")
+
 
 def show_sort_by_tags():
     print("coming soon")

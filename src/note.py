@@ -1,6 +1,6 @@
 import sys
 import json
-from config import HOME, TODO_SAVE
+from config import HOME, TODO_SAVE, EDITOR_FOR_NOTES
 import subprocess
 
 
@@ -18,4 +18,4 @@ def note(arg):
         return
 
     path = f"{HOME}/todo_cli/notes/{name}"
-    subprocess.run(["vim", str(path)])
+    subprocess.run([EDITOR_FOR_NOTES, str(path)])
