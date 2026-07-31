@@ -3,6 +3,7 @@
 This is a simple command-line todo management tool for linux environment.
 
 ## Requirements
+
 python > 3.8 is recommended.
 
 ## Installation
@@ -24,6 +25,10 @@ To check the usage, type `todo` .
 | `todo note <todo>` | add notes in the todo (vim opens) |
 | `todo tag <todo name> <tag name>` | add a tag on the todo |
 | `todo due <todo name> <YYYY-MM-DD>` | set a due date |
+
+## Customize
+
+The editor used for `todo note` can be changed by editing constant `EDITOR_FOR_NOTES` in `src/config.py` e.g. `EDITOR_FOR_NOTES = "nvim"`. (Default: vim)
 
 ## Examples
 - Initialize: `todo init`
