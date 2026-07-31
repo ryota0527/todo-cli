@@ -10,40 +10,41 @@ from due import dueset
 
 
 def main():
-    command = sys.argv[1]
+    if len(sys.argv) > 1:
+        command = sys.argv[1]
 
-    if command == "init":
-        DATA_DIR.mkdir(parents=True, exist_ok=True)
-        NOTES_DIR.mkdir(parents=True, exist_ok=True)
+        if command == "init":
+            DATA_DIR.mkdir(parents=True, exist_ok=True)
+            NOTES_DIR.mkdir(parents=True, exist_ok=True)
 
-        if not TODO_SAVE.exists():
-            with open(TODO_SAVE, "w", encoding="utf-8") as f:
-                json.dump([], f, indent=4)
+            if not TODO_SAVE.exists():
+                with open(TODO_SAVE, "w", encoding="utf-8") as f:
+                    json.dump([], f, indent=4)
 
-    elif command == "view":
-        if len(sys.argv) > 2 and sys.argv[2] == "-a":
-            show(al=True)
+        elif command == "view":
+            if len(sys.argv) > 2 and sys.argv[2] == "-a":
+                show(al=True)
 
-        else:
-            show(al=False)
+            else:
+                show(al=False)
 
-    elif command == "make":
-        make(sys.argv[2:])
+        elif command == "make":
+            make(sys.argv[2:])
 
-    elif command == "del":
-        delete(sys.argv[2:])
+        elif command == "del":
+            delete(sys.argv[2:])
 
-    elif command == "done":
-        done(sys.argv[2:])
+        elif command == "done":
+            done(sys.argv[2:])
 
-    elif command == "tag":
-        maketag(sys.argv[2:])
+        elif command == "tag":
+            maketag(sys.argv[2:])
 
-    elif command == "note":
-        note(sys.argv[2])
+        elif command == "note":
+            note(sys.argv[2])
 
-    elif command == "due":
-        dueset(sys.argv[2:])
+        elif command == "due":
+            dueset(sys.argv[2:])
 
     else:
         print("Usage:")
