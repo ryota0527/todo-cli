@@ -36,7 +36,7 @@ To check the usage, type `todo` .
 
 - Set the due date: `todo due "read an article" 2026-08-01`
 
-- Add a tag: `todo tag "read an article" research
+- Add a tag: `todo tag "read an article" research`
 
 - View again: `todo view`<br>
 (Output: `- read an article  Tag: research  Due: 2026-08-01`
