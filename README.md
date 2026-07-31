@@ -2,12 +2,12 @@
 
 This is a simple command-line todo management tool for linux environment.
 
+## Requirements
+python > 3.8 is recommended.
+
 ## Installation
 
 Clone this repository and run: `./install.sh`
-
-install.sh copies the execution file named "todo" in `~/.local/bin` .<br>
-(It creates the directory before the installation if it doesn't exist)
 
 Then you can use just by `todo init` .<br>
 To check the usage, type `todo` .
@@ -18,14 +18,12 @@ To check the usage, type `todo` .
 |---------|-------------|
 | `todo init` | Initialize |
 | `todo view [-a]` | show current todos |
-| `todo make <name>` | make a new todo |
-| `todo done <name>` | mark a todo as finished |
-| `todo del <name>` | remove a todo which is not finished |
-| `todo cleanup` | remove finished todos |
+| `todo make <name1>, <name2>, ...` | make a new todo |
+| `todo done <name1>, <name2>, ...` | mark a todo as finished |
+| `todo del <name1>, <name2>, ...` | remove a todo which is not finished |
 | `todo note <todo>` | add notes in the todo (vim opens) |
 | `todo tag <todo name> <tag name>` | add a tag on the todo |
-
-(* tag feature is not completely implemented yet. wait for the next update)
+| `todo due <todo name> <YYYY-MM-DD>` | set a due date |
 
 ## Examples
 Initialize: `todo init`

@@ -1,19 +1,18 @@
 import json
-import sys
 from config import TODO_SAVE
 
 
-def make():
+def make(args):
     with open(TODO_SAVE,"r", encoding="utf-8") as f:
         todo = json.load(f)
 
-    for arg in sys.argv:
+    for arg in args:
         t = {
                 "name": arg,
                 "due": None,
                 "tag": None,
-                "note": None,
-                "done": False
+                "done": False,
+                "delay": False
             }
         todo.append(t)
 
@@ -21,11 +20,11 @@ def make():
         json.dump(todo, f, ensure_ascii=False, indent=4)
 
 
-def done():
+def done(args):
     with open(TODO_SAVE,"r", encoding="utf-8") as f:
         todos = json.load(f)
 
-    for arg in sys.argv:
+    for arg in args:
         for item in todos:
             if item["name"] == arg:
                 item["done"] = True
@@ -33,19 +32,19 @@ def done():
 
         else:
             print(f"todo {arg} not found")
-
+            return
 
     with open(TODO_SAVE,"w", encoding="utf-8") as f:
         json.dump(todos, f, ensure_ascii=False, indent=4)
 
 
-def delete():
+def delete(args):
     new_todos = []
 
     with open(TODO_SAVE,"r", encoding="utf-8") as f:
         todos = json.load(f)
 
-    for arg in sys.argv:
+    for arg in args:
         for item in todos:
             if item["name"] == arg:
                 continue
@@ -68,7 +67,4 @@ def clean():
             json.dump(t, f, ensure_ascii=False, indent=4)
 
     else:
-        pass 
-
-    print("Finished tasks deleted")
-
+        pass

@@ -1,5 +1,8 @@
 from pathlib import Path
 
 HOME = Path.home()
-TODO_SAVE = f"{HOME}/todo_cli/data/todos"
+TODO_DIR = HOME / "todo_cli"
+DATA_DIR = TODO_DIR / "data"
+NOTES_DIR = TODO_DIR / "notes"
 
+TODO_SAVE = DATA_DIR / "todos.json"
