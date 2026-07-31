@@ -10,7 +10,7 @@ python > 3.8 is recommended.
 
 Clone this repository and run: `./install.sh`
 
-Then you can use just by `todo init` .<br>
+Then you can use just by running `todo init` .<br>
 To check the usage, type `todo` .
 
 ## Commands List
@@ -19,9 +19,9 @@ To check the usage, type `todo` .
 |---------|-------------|
 | `todo init` | Initialize |
 | `todo view [-a]` | show current todos |
-| `todo make <name1>, <name2>, ...` | make a new todo |
-| `todo done <name1>, <name2>, ...` | mark a todo as finished |
-| `todo del <name1>, <name2>, ...` | remove a todo which is not finished |
+| `todo make <name1>, <name2>, ...` | make new todos |
+| `todo done <name1>, <name2>, ...` | mark todos as finished |
+| `todo del <name1>, <name2>, ...` | remove todos which is not finished |
 | `todo note <todo>` | add notes in the todo (vim opens) |
 | `todo tag <todo name> <tag name>` | add a tag on the todo |
 | `todo due <todo name> <YYYY-MM-DD>` | set a due date |
@@ -44,7 +44,8 @@ The editor used for `todo note` can be changed by editing constant `EDITOR_FOR_N
 - Add a tag: `todo tag "read an article" research`
 
 - View again: `todo view`<br>
-(Output: `- read an article  Tag: research  Due: 2026-08-01`
+(Output: `- read an article | Due: 2026-08-01 | Tag: research `)
+![todo-cli demo](figs_ex/view_ex.png)
 
 - Add the link to the article as notes: `todo note "read an article"`<br>
 (One can paste the link in the todo file)
