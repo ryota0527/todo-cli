@@ -24,14 +24,10 @@ def done(args):
     with open(TODO_SAVE,"r", encoding="utf-8") as f:
         todos = json.load(f)
 
-    for arg in args:
-        for item in todos:
-            if item["name"] == arg:
-                item["done"] = True
-                break
-
-        else:
-            print(f"todo {arg} not found")
+    for item in todos:
+        if item["name"] in args:
+            item["done"] = True
+            break
 
     with open(TODO_SAVE,"w", encoding="utf-8") as f:
         json.dump(todos, f, ensure_ascii=False, indent=4)
@@ -43,13 +39,12 @@ def delete(args):
     with open(TODO_SAVE,"r", encoding="utf-8") as f:
         todos = json.load(f)
 
-    for arg in args:
-        for item in todos:
-            if item["name"] == arg:
-                continue
-            
-            else:
-                new_todos.append(item)
+    for item in todos:
+        if item["name"] in args:
+            continue
+        
+        else:
+            new_todos.append(item)
 
     with open(TODO_SAVE,"w", encoding="utf-8") as f:
         json.dump(new_todos, f, ensure_ascii=False, indent=4)
