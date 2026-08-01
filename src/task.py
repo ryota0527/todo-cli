@@ -41,7 +41,9 @@ def delete(args):
 
     for item in todos:
         if item["name"] in args:
-            NOTES_DIR.rm(item["name"])
+            rmpath = NOTES_DIR / item["name"]
+            if rmpath.exists():
+                rmpath.unlink()
             
         else:
             new_todos.append(item)
