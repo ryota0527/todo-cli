@@ -26,9 +26,15 @@ To check the usage, type `todo` .
 | `todo tag <todo name> <tag name>` | add a tag on the todo |
 | `todo due <todo name> <YYYY-MM-DD>` | set a due date |
 
+## Tips
+
+- Shell completion is available for todo names when you run such as `todo done` or `todo note`. Press <Tab> to use the completion just as you usually do in command line.
+
 ## Customize
 
-The editor used for `todo note` can be changed by editing constant `EDITOR_FOR_NOTES` in `src/config.py` e.g. `EDITOR_FOR_NOTES = "nvim"`. (Default: vim)
+- The editor used for `todo note` can be changed by editing constant `EDITOR_FOR_NOTES` in `src/config.py` e.g. `EDITOR_FOR_NOTES = "nvim"`. (Default: vim)
+
+- Finished todos are automatically deleted if the number of it become more than 15. This number can be changed by editing `CLEAN_NUM` in `src/config.py` .
 
 ## Examples
 - Initialize: `todo init`

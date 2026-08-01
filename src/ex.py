@@ -7,6 +7,7 @@ from tag import maketag
 from note import note
 from show import show, show_sort_by_tags, show_sort_by_due
 from due import dueset
+from completion import comp
 
 
 def main():
@@ -45,6 +46,9 @@ def main():
 
         elif command == "due":
             dueset(sys.argv[2:])
+
+        elif command == "comp"
+            comp()
 
     else:
         print("Usage:")
