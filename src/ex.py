@@ -47,7 +47,7 @@ def main():
         elif command == "due":
             dueset(sys.argv[2:])
 
-        elif command == "comp"
+        elif command == "comp":
             comp()
 
     else:
