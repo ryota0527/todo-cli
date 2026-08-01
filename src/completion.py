@@ -7,4 +7,4 @@ def comp():
         todos = json.load(f)
 
     for item in todos:
-        print(item["name"])
+        print(f'"{item["name"]}"')

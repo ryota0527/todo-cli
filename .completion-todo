@@ -5,9 +5,12 @@ completion() {
 
     cur="${COMP_WORDS[COMP_CWORD]}"
 
-    COMPREPLY=(
-        $(compgen -W "$(todo comp)" -- "$cur")
-    )
+    COMPREPLY=()
+
+    while IFS= read -r name; do
+        COMPREPLY+=("$name")
+    done < <(todo comp | grep "^$cur")
+
 }
 
 complete -F completion todo
