@@ -28,12 +28,13 @@ def show(al):
         c_name = c["name"]
         c_tag = ""
         c_due = ""
+    
         if c["tag"] != None:
-            c_tag = " | Tag: " + c["tag"]
+            c_tag = f" [ Tag: {c["tag"]} ]"
 
         if c["due"] != None:
-            c_due = " | Due: " + c["due"]
-        
+            c_due = f" [ Due: {c["due"]} ]"
+
         if c["delay"] == True:
             print(f"- {c_name}\033[31m{c_due}\033[0m{c_tag}")
         
@@ -50,10 +51,10 @@ def show(al):
             f_tag = ""
             f_due = ""
             if f["tag"] != None:
-                f_tag = " | Tag: " + f["tag"]
+                f_tag = f" [ Tag: {f["tag"]} ]"
 
             elif f["due"] != None:
-                f_due = " | Due: " + f["due"]
+                f_due = f" [ Due: {f["due"]} ]"
 
             print(f"- {f_name}{f_due}{f_tag}")
 
