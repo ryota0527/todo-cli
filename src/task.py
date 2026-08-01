@@ -1,5 +1,5 @@
 import json
-from config import TODO_SAVE
+from config import TODO_SAVE, NOTES_DIR, CLEAN_NUM
 
 
 def make(args):
@@ -41,8 +41,8 @@ def delete(args):
 
     for item in todos:
         if item["name"] in args:
-            continue
-        
+            NOTES_DIR.rm(item["name"])
+            
         else:
             new_todos.append(item)
 
@@ -51,14 +51,20 @@ def delete(args):
 
 
 def clean():
+    new_todo = []
     with open(TODO_SAVE,"r", encoding="utf-8") as f:
         todos = json.load(f)
 
-    if len(todos) >= 300:
-        t = [item for item in todos if not item["done"]]
+    if len(todos) >= CLEAN_NUM:
+        for item in todos:
+            if item["done"] == True:
+                NOTES_DIR.rm(item["name"])
+            
+            elif item["done"] == False:
+                new_todo.append(item)
 
         with open(TODO_SAVE,"w", encoding="utf-8") as f:
-            json.dump(t, f, ensure_ascii=False, indent=4)
+            json.dump(new_todo, f, ensure_ascii=False, indent=4)
 
     else:
         pass

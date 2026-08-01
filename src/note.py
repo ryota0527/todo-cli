@@ -1,6 +1,6 @@
 import sys
 import json
-from config import HOME, TODO_SAVE, EDITOR_FOR_NOTES
+from config import HOME, TODO_SAVE, NOTES_DIR ,EDITOR_FOR_NOTES
 import subprocess
 
 
@@ -17,5 +17,5 @@ def note(arg):
         print(f"todo {name} not found")
         return
 
-    path = f"{HOME}/todo_cli/notes/{name}"
+    path = NOTES_DIR / name
     subprocess.run([EDITOR_FOR_NOTES, str(path)])
