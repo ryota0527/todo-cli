@@ -36,10 +36,10 @@ def show(al):
             c_due = f" [ Due: {c["due"]} ]"
 
         if c["delay"] == True:
-            print(f"- {c_name}\033[31m{c_due}\033[0m{c_tag}")
+            print(f"- {c_name}\033[31m{c_due}\033[36m{c_tag}\033[0m")
         
         else:
-            print(f"- {c_name}{c_due}{c_tag}")
+            print(f"- {c_name}\033[33m{c_due}\033[36m{c_tag}\033[0m")
     
     print("\n")
 
@@ -56,7 +56,7 @@ def show(al):
             elif f["due"] != None:
                 f_due = f" [ Due: {f["due"]} ]"
 
-            print(f"- {f_name}{f_due}{f_tag}")
+            print(f"- {f_name}\033[32m{f_due}\033[36m{f_tag}\033[0m")
 
         print("\n")
 
