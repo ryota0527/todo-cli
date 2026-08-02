@@ -40,8 +40,8 @@ def show(al):
         
         else:
             print(f"- {c_name}\033[33m{c_due}\033[36m{c_tag}\033[0m")
-    
-    print("\n")
+
+    print()
 
     if al == True:
         print("=================")
@@ -58,8 +58,7 @@ def show(al):
 
             print(f"- {f_name}\033[32m{f_due}\033[36m{f_tag}\033[0m")
 
-        print("\n")
-
+    print()
 
 def show_sort_by_tags():
     print("coming soon")
