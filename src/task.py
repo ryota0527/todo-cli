@@ -52,15 +52,21 @@ def delete(args):
         json.dump(new_todos, f, ensure_ascii=False, indent=4)
 
 
-def clean():
+def clean(manual):
     new_todo = []
+    n = int(CLEAN_NUM)
+    if manual == True:
+        n = 0
+
     with open(TODO_SAVE,"r", encoding="utf-8") as f:
         todos = json.load(f)
 
-    if len(todos) >= CLEAN_NUM:
+    if len(todos) >= n:
         for item in todos:
             if item["done"] == True:
-                NOTES_DIR.rm(item["name"])
+                rmpath = NOTES_DIR / item["name"]
+                if rmpath.exists():
+                    rmpath.unlink()
             
             elif item["done"] == False:
                 new_todo.append(item)

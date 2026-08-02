@@ -7,7 +7,7 @@ from task import clean
 
 def show(al):
     delay()
-    clean()
+    clean(manual=False)
 
     c_todo = []
     f_todo = []

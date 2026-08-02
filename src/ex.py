@@ -47,6 +47,9 @@ def main():
         elif command == "due":
             dueset(sys.argv[2:])
 
+        elif command == "clean":
+            clean(manual=True)
+
         elif command == "comp":
             comp()
 
@@ -60,6 +63,7 @@ def main():
         print("  todo tag <name> <tag>")
         print("  todo due <name> <YYYY-MM-DD>")
         print("  todo done <name1>, <name2>, ...")
+        print("  todo clean")
 
 
 if __name__ == "__main__":
