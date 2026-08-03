@@ -27,7 +27,6 @@ def done(args):
     for item in todos:
         if item["name"] in args:
             item["done"] = True
-            break
 
     with open(TODO_SAVE,"w", encoding="utf-8") as f:
         json.dump(todos, f, ensure_ascii=False, indent=4)
