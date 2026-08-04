@@ -45,7 +45,7 @@ def main():
         elif command == "done":
             done(sys.argv[2:])
 
-        elif command == "undone"
+        elif command == "undone":
             undone(sys.argv[2:])
 
         elif command == "tag":
