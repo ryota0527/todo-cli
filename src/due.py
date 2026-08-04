@@ -54,7 +54,7 @@ def rmdue(args):
 
     names = args
 
-   for item in todos:
+    for item in todos:
         if item["name"] in names:
             item["due"] = None
             found = True
