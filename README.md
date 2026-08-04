@@ -23,8 +23,8 @@ To check the usage, type `todo` .
 | `todo done <name1>, <name2>, ...` | mark todos as finished |
 | `todo del <name1>, <name2>, ...` | remove todos which are not finished |
 | `todo note <todo>` | add notes in the todo (vim opens) |
-| `todo tag <todo name> <tag name>` | add a tag on the todo |
-| `todo due <todo name> <YYYY-MM-DD>` | set due date for the todo |
+| `todo tag <todo name1> <todo name2> ... <tag name>` | add a tag on the todo |
+| `todo due <todo name1> <todo name2> ... <YYYY-MM-DD>` | set due date for the todo |
 | `todo clean` | delete all the finished todos |
 
 ## Tips

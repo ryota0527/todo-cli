@@ -3,17 +3,18 @@ from config import TODO_SAVE
 
 
 def maketag(args):
+    found = False
     with open(TODO_SAVE,"r", encoding="utf-8") as f:
         todos = json.load(f)
 
-    name = args[0]
+    names = args[:-1]
     for item in todos:
-        if item["name"] == name:
-            item["tag"] = args[1]
-            break
+        if item["name"] in names:
+            item["tag"] = args[-1]
+            found = True
 
-    else:
-        print(f"todo {name} not found")
+    if not found:
+        print(f"todo {', '.join(names)} not found")
         return
 
     with open(TODO_SAVE,"w", encoding="utf-8") as f:
