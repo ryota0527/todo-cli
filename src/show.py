@@ -81,8 +81,8 @@ def show_sort_by_due(al):
         elif t["done"] == True:
             f_todo.append(t)
 
-    c_todo.sort(key= lambda x: x.get("due", "9999-12-31"))
-    f_todo.sort(key= lambda x: x.get("due", "9999-12-31"))
+    c_todo.sort(key= lambda x: (x.get("due") is None, x.get("due", "")))
+    f_todo.sort(key= lambda x: (x.get("due") is None, x.get("due", "")))
 
     print("=================")
     print("\033[33mCurrent todos:\033[0m")
