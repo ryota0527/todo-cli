@@ -26,7 +26,7 @@ def show_sort_by_tags(al):
     f_todo.sort(key= lambda x: (x.get("tag") is None, x.get("tag", "")))
 
     print("=================")
-    print("\033[33mCurrent todos:\033[0m")
+    print("\033[93mCurrent todos:\033[0m")
     for c in c_todo:
         c_name = c["name"]
         c_tag = ""
@@ -48,7 +48,7 @@ def show_sort_by_tags(al):
 
     if al == True:
         print("=================")
-        print("\033[32mFinished:\033[0m")
+        print("\033[92mFinished:\033[0m")
         for f in f_todo:
             f_name = f["name"]
             f_tag = ""
@@ -85,7 +85,7 @@ def show_sort_by_due(al):
     f_todo.sort(key= lambda x: (x.get("due") is None, x.get("due", "")))
 
     print("=================")
-    print("\033[33mCurrent todos:\033[0m")
+    print("\033[93mCurrent todos:\033[0m")
     for c in c_todo:
         c_name = c["name"]
         c_tag = ""
@@ -107,7 +107,7 @@ def show_sort_by_due(al):
 
     if al == True:
         print("=================")
-        print("\033[32mFinished:\033[0m")
+        print("\033[92mFinished:\033[0m")
         for f in f_todo:
             f_name = f["name"]
             f_tag = ""
