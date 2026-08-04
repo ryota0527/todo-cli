@@ -23,8 +23,8 @@ To check the usage, type `todo` .
 | `todo done <name1>, <name2>, ...` | mark todos as finished |
 | `todo del <name1>, <name2>, ...` | remove todos which are not finished |
 | `todo note <todo>` | add notes in the todo (vim opens) |
-| `todo tag <todo name1> <todo name2> ... <tag name>` | add a tag on the todo |
-| `todo due <todo name1> <todo name2> ... <YYYY-MM-DD>` | set due date for the todo |
+| `todo tag <todo name1> <todo name2> ... <tag name>` | add a tag on the todos |
+| `todo due <todo name1> <todo name2> ... <YYYY-MM-DD>` | set due date for the todos |
 | `todo clean` | delete all the finished todos |
 
 ## Tips
@@ -36,6 +36,8 @@ To check the usage, type `todo` .
 - The editor used for `todo note` can be changed by editing constant `EDITOR_FOR_NOTES` in `src/config.py` e.g. `EDITOR_FOR_NOTES = "nvim"`. (Default: vim)
 
 - Finished todos are automatically deleted when the number of it become more than 15. This number can be changed by editing `CLEAN_NUM` in `src/config.py` . (Finished todos can be deleted manually as well by running `todo clean`)
+
+- (Advanced) The directory where todos are saved can be changed by editing `TODO_SAVE` in `src/config.py`. If one sets `TODO_SAVE` a directory in the cloud such as Onedrive, one will be able to sync the todos on different devices. Make sure to run `todo init` again after changing `TODO_SAVE`, and copy the existing json file and notes file in the former `TODO_SAVE` directory (it is initially ~/todo_cli).
 
 ## Examples
 - Initialize: `todo init`

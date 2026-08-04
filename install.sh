@@ -26,4 +26,4 @@ fi
 
 echo "Installation completed."
 echo "Run: source ~/.bashrc"
-echo "Then you can use: todo init"
+echo "Then you can use after running: todo init"
