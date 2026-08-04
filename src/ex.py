@@ -2,11 +2,11 @@ import sys
 from pathlib import Path
 import json
 from config import HOME, TODO_SAVE, DATA_DIR, NOTES_DIR
-from task import make, done, delete, clean
-from tag import maketag
+from task import make, done, undone, delete, clean
+from tag import maketag, rmtag
 from note import note
-from show import show, show_sort_by_tags, show_sort_by_due
-from due import dueset
+from show import show_sort_by_tags, show_sort_by_due
+from due import dueset, rmdue
 from completion import comp
 
 
@@ -23,11 +23,18 @@ def main():
                     json.dump([], f, indent=4)
 
         elif command == "view":
-            if len(sys.argv) > 2 and sys.argv[2] == "-a":
-                show(al=True)
+            if len(sys.argv) > 2 and "-t" in sys.argv:
+                if "-a" in sys.argv:
+                    show_sort_by_tags(al=True)
+
+                else:
+                    show_sort_by_tags(al=False)
+
+            elif len(sys.argv) > 2 and "-a" in sys.argv:
+                show_sort_by_due(al=True)
 
             else:
-                show(al=False)
+                show_sort_by_due(al=False)
 
         elif command == "make":
             make(sys.argv[2:])
@@ -38,14 +45,25 @@ def main():
         elif command == "done":
             done(sys.argv[2:])
 
+        elif command == "undone"
+            undone(sys.argv[2:])
+
         elif command == "tag":
-            maketag(sys.argv[2:])
+            if len(sys.argv) > 2 and "-rm" in sys.argv:
+                rmtag(sys.argv[3:])
+
+            else:
+                maketag(sys.argv[2:])
 
         elif command == "note":
             note(sys.argv[2])
 
         elif command == "due":
-            dueset(sys.argv[2:])
+            if len(sys.argv) > 2 and "-rm" in sys.argv:
+                rmdue(sys.argv[3:])
+
+            else:
+                dueset(sys.argv[2:])
 
         elif command == "clean":
             clean(manual=True)
@@ -60,9 +78,10 @@ def main():
         print("  todo del <name1>, <name2>, ...")
         print("  todo note <name>")
         print("  todo view [-a]")
-        print("  todo tag <name> <tag>")
-        print("  todo due <name> <YYYY-MM-DD>")
+        print("  todo tag [-rm] <name> <tag>")
+        print("  todo due [-rm] <name> <YYYY-MM-DD>")
         print("  todo done <name1>, <name2>, ...")
+        print("  todo undone <name1>, <name2>, ...")
         print("  todo clean")
 
 

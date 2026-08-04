@@ -32,6 +32,18 @@ def done(args):
         json.dump(todos, f, ensure_ascii=False, indent=4)
 
 
+def undone(args):
+    with open(TODO_SAVE,"r", encoding="utf-8") as f:
+        todos = json.load(f)
+
+    for item in todos:
+        if item["name"] in args:
+            item["done"] = False
+
+    with open(TODO_SAVE,"w", encoding="utf-8") as f:
+        json.dump(todos, f, ensure_ascii=False, indent=4)
+
+
 def delete(args):
     new_todos = []
 

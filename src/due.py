@@ -21,6 +21,7 @@ def dueset(args):
         if item["name"] in names:
             item["due"] = str(due)
             found = True
+            item["delay"] = False
 
     if not found:
         print(f"todo {', '.join(names)} not found")
@@ -42,5 +43,26 @@ def delay():
             if due < today :
                 item["delay"] = True
 
+    with open(TODO_SAVE,"w", encoding="utf-8") as f:
+        json.dump(todos, f, ensure_ascii=False, indent=4)
+
+
+def rmdue(args):
+    found = False
+    with open(TODO_SAVE,"r", encoding="utf-8") as f:
+        todos = json.load(f)
+
+    names = args
+
+   for item in todos:
+        if item["name"] in names:
+            item["due"] = None
+            found = True
+            item["delay"] = False
+
+    if not found:
+        print(f"todo {', '.join(names)} not found")
+        return
+   
     with open(TODO_SAVE,"w", encoding="utf-8") as f:
         json.dump(todos, f, ensure_ascii=False, indent=4)
