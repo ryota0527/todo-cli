@@ -18,18 +18,19 @@ To check the usage, type `todo` .
 | command | Description |
 |---------|-------------|
 | `todo init` | initialize |
-| `todo view [-a] [-t]` | show current todos |
+| `todo view [-a] [-t] [-f <tag>]` | show current todos |
 | `todo make <name1>, <name2>, ...` | make new todos |
 | `todo done <name1>, <name2>, ...` | mark todos as finished |
 | `todo undone <name1>, <name2>, ...` | mark todos as not finished |
 | `todo del <name1>, <name2>, ...` | remove todos which are not finished |
-| `todo note <todo>` | add notes in the todo (vim opens) |
+| `todo note <todo>` | write notes (markdown file) linked to the todo (vim opens) |
 | `todo tag [-rm] <todo name1> <todo name2> ... <tag name>` | add [remove] a tag on the todos |
 | `todo due [-rm] <todo name1> <todo name2> ... <YYYY-MM-DD>` | set [remove] due date for the todos |
 | `todo clean` | delete all the finished todos |
 
 - `[-a]` in `todo view` means "include finished todo" (only remained todos are shown by default).
 - `[-t]` in `todo view` means "sort by tags". todos are sorted by their deadlines by default.
+- `[-f <tag>]` in `todo view` means "show all the todos with the `<tag>`".
 - `[-rm]` in `todo tag` and `todo due` means remove tag or due from todos.
 
 ## Tips

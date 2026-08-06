@@ -8,14 +8,14 @@ def note(arg):
     with open(TODO_SAVE,"r", encoding="utf-8") as f:
         todos = json.load(f)
 
-    name = arg
     for item in todos:
-        if item["name"] == name:
+        if item["name"] == arg:
             break
 
     else:
         print(f"todo {name} not found")
         return
 
+    name = arg + ".md"
     path = NOTES_DIR / name
     subprocess.run([EDITOR_FOR_NOTES, str(path)])

@@ -121,3 +121,58 @@ def show_sort_by_due(al):
             print(f"- {f_name}\033[32m{f_due}\033[36m{f_tag}\033[0m")
 
     print()
+
+
+def show_find_tag(al, arg):
+    delay()
+    clean(manual=False)
+
+    c_todo = []
+    f_todo = []
+
+    with open(TODO_SAVE,"r", encoding="utf-8") as f:
+        todos = json.load(f)
+
+    for t in todos:
+        if t["tag"] == arg and t["done"] == False:
+            c_todo.append(t)
+        
+        elif t["tag"] == arg and t["done"] == True:
+            f_todo.append(t)
+
+    c_todo.sort(key= lambda x: (x.get("due") is None, x.get("due", "")))
+    f_todo.sort(key= lambda x: (x.get("due") is None, x.get("due", "")))
+
+    print("=================")
+    print(f"\033[96m[ Tag: {arg} ]\033[0m")
+    print("\033[93mCurrent todos:\033[0m")
+    for c in c_todo:
+        c_name = c["name"]
+        c_due = ""
+    
+        if c["due"] != None:
+            c_due = f" [ Due: {c["due"]} ]"
+
+        if c["delay"] == True:
+            print(f"- {c_name}\033[31m{c_due}\033[0m")
+        
+        else:
+            print(f"- {c_name}\033[33m{c_due}\033[0m")
+
+    print()
+
+    if al == True:
+        print("=================")
+        print("\033[92mFinished:\033[0m")
+        for f in f_todo:
+            f_name = f["name"]
+            f_due = ""
+
+            if f["due"] != None:
+                f_due = f" [ Due: {f["due"]} ]"
+
+            print(f"- {f_name}\033[32m{f_due}\033[0m")
+
+    print()
+
+

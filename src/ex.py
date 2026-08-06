@@ -1,13 +1,13 @@
 import sys
 from pathlib import Path
 import json
-from config import HOME, TODO_SAVE, DATA_DIR, NOTES_DIR
 from task import make, done, undone, delete, clean
 from tag import maketag, rmtag
 from note import note
-from show import show_sort_by_tags, show_sort_by_due
+from show import show_sort_by_tags, show_sort_by_due, show_find_tag
 from due import dueset, rmdue
 from completion import comp
+from initialize import init
 
 
 def main():
@@ -15,12 +15,7 @@ def main():
         command = sys.argv[1]
 
         if command == "init":
-            DATA_DIR.mkdir(parents=True, exist_ok=True)
-            NOTES_DIR.mkdir(parents=True, exist_ok=True)
-
-            if not TODO_SAVE.exists():
-                with open(TODO_SAVE, "w", encoding="utf-8") as f:
-                    json.dump([], f, indent=4)
+            init()
 
         elif command == "view":
             if len(sys.argv) > 2 and "-t" in sys.argv:
@@ -28,13 +23,21 @@ def main():
                     show_sort_by_tags(al=True)
 
                 else:
-                    show_sort_by_tags(al=False)
+                    show_sort_by_tags(al=False) 
 
-            elif len(sys.argv) > 2 and "-a" in sys.argv:
-                show_sort_by_due(al=True)
+            elif len(sys.argv) > 2 and "-f" in sys.argv:
+                if "-a" in sys.argv:
+                    show_find_tag(al=True, arg=sys.argv[-1])
+
+                else:
+                    show_find_tag(al=False, arg=sys.argv[-1])
 
             else:
-                show_sort_by_due(al=False)
+                if len(sys.argv) > 2 and "-a" in sys.argv:
+                    show_sort_by_due(al=True)
+                
+                else:
+                    show_sort_by_due(al=False)
 
         elif command == "make":
             make(sys.argv[2:])
