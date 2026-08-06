@@ -2,7 +2,21 @@ import json
 from config import TODO_SAVE, NOTES_DIR, CLEAN_NUM
 
 
+def detect_sametodo(args):
+    with open(TODO_SAVE,"r", encoding="utf-8") as f:
+        todos = json.load(f)
+
+    for item in todos:
+        if item["name"] in args:
+            raise ValueError(f"The todo '{item["name"]}' already exists.")
+
+    else:
+        pass
+
+
 def make(args):
+    detect_sametodo(args)
+
     with open(TODO_SAVE,"r", encoding="utf-8") as f:
         todo = json.load(f)
 
