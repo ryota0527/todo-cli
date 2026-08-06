@@ -56,7 +56,7 @@ def show_sort_by_tags(al):
             if f["tag"] != None:
                 f_tag = f" [ Tag: {f["tag"]} ]"
 
-            elif f["due"] != None:
+            if f["due"] != None:
                 f_due = f" [ Due: {f["due"]} ]"
 
             print(f"- {f_name}\033[32m{f_due}\033[36m{f_tag}\033[0m")
@@ -115,7 +115,7 @@ def show_sort_by_due(al):
             if f["tag"] != None:
                 f_tag = f" [ Tag: {f["tag"]} ]"
 
-            elif f["due"] != None:
+            if f["due"] != None:
                 f_due = f" [ Due: {f["due"]} ]"
 
             print(f"- {f_name}\033[32m{f_due}\033[36m{f_tag}\033[0m")
