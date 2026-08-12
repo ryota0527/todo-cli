@@ -18,5 +18,7 @@ def note(arg):
 
     name = arg + ".md"
     path = NOTES_DIR / name
+    path.touch(exist_ok=True)
+
     subprocess.run([EDITOR_FOR_NOTES, str(path)])
 
