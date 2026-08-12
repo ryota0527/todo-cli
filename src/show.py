@@ -92,7 +92,18 @@ def show_find_tag(al, arg):
     delay()
     clean(manual=False)
 
-    c_todo, f_todo = classify()
+    c_todo = []
+    f_todo = []
+
+    with open(TODO_SAVE,"r", encoding="utf-8") as f:
+        todos = json.load(f)
+
+    for t in todos:
+        if t["tag"] == arg and t["done"] == False:
+            c_todo.append(t)
+        
+        elif t["tag"] == arg and t["done"] == True:
+            f_todo.append(t)
 
     c_todo.sort(key= lambda x: (x.get("due") is None, x.get("due", "")))
     f_todo.sort(key= lambda x: (x.get("due") is None, x.get("due", "")))
