@@ -8,7 +8,7 @@ from show import show_sort_by_tags, show_sort_by_due, show_find_tag
 from due import dueset, rmdue
 from completion import comp
 from initialize import init
-from branch import switch, show_br
+from branch import switch, show_br, rm_branch
 
 
 def main():
@@ -73,7 +73,10 @@ def main():
                 dueset(sys.argv[2:])
 
         elif command == "branch":
-            if len(sys.argv) > 2:
+            if len(sys.argv) > 3 and sys.argv[2] == "-rm":
+                rm_branch(sys.argv[3])
+                
+            elif len(sys.argv) > 2:
                 init(sys.argv[2])
             
             else:

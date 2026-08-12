@@ -6,6 +6,9 @@ This is a simple command-line todo management tool for linux environment.
 
 python > 3.8 is recommended.
 
+## Main Features
+
+
 ## Installation
 
 Clone this repository and run: `./install.sh`
@@ -15,24 +18,30 @@ To check the usage, type `todo` .
 
 ## Commands List
 
+Commands below are available and can be run by `todo <command>`.
+
 | command | Description |
 |---------|-------------|
-| `todo init` | initialize |
-| `todo view [-a] [-t] [-f <tag>]` | show current todos |
-| `todo make <name1> <name2> ...` | make new todos |
-| `todo rename <target> <newname>` | rename existing todo |
-| `todo done <name1> <name2> ...` | mark todos as finished |
-| `todo undone <name1>, <name2>, ...` | mark todos as not finished |
-| `todo del <name1> <name2> ...` | remove todos which are not finished |
-| `todo note <todo>` | write notes (markdown file) linked to the todo (vim opens) |
-| `todo tag [-rm] <todo name1> <todo name2> ... <tag name>` | add [remove] a tag on the todos |
-| `todo due [-rm] <todo name1> <todo name2> ... <YYYY-MM-DD>` | set [remove] due date for the todos |
-| `todo clean` | delete all the finished todos |
+| `init` | initialize |
+| `view [-a] [-t] [-f <tag>]` | show current todos |
+| `make <name1> <name2> ...` | make new todos |
+| `rename <target> <newname>` | rename existing todo |
+| `done <name1> <name2> ...` | mark todos as finished |
+| `undone <name1> <name2> ...` | mark todos as not finished |
+| `del <name1> <name2> ...` | remove todos which are not finished |
+| `note <todo>` | write notes (markdown file) linked to the todo (vim opens) |
+| `tag [-rm] <todo name1> <todo name2> ... <tag name>` | add [remove] a tag on the todos |
+| `due [-rm] <todo name1> <todo name2> ... <YYYY-MM-DD>` | set [remove] due date for the todos |
+| `branch [-rm] <branch name>` | create [remove] a branch |
+| `switch <branch name>` | switch to the branch |
+| `clean` | delete all the finished todos |
 
-- `[-a]` in `todo view` means "include finished todo" (only remained todos are shown by default).
-- `[-t]` in `todo view` means "sort by tags". todos are sorted by their deadlines by default.
-- `[-f <tag>]` in `todo view` means "show all the todos with the `<tag>`".
-- `[-rm]` in `todo tag` and `todo due` means remove tag or due from todos.
+### Options
+
+- `[-a]` in `view` : include finished todo (only remained todos are shown by default).
+- `[-t]` in `view` : sort todos by tags (todos are sorted by their deadlines by default).
+- `[-f <tag>]` in `view` : show all the todos with the `<tag>`.
+- `[-rm]` in `tag`,  `due`, and `branch` : remove the targets.
 
 ## Tips
 

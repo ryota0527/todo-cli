@@ -24,7 +24,7 @@ def classify():
 
 def formats(c_todo, f_todo, al):
     print("=================")
-    print(f"\n\033[92mBranch: {CURRENT_BRANCH}\033[0m\n")
+    print(f"\033[92mBranch: {CURRENT_BRANCH}\033[0m")
     print("=================")
     print("\033[93mCurrent todos:\033[0m")
     for c in c_todo:
@@ -98,7 +98,7 @@ def show_find_tag(al, arg):
     f_todo.sort(key= lambda x: (x.get("due") is None, x.get("due", "")))
 
     print("=================")
-    print(f"\n\033[92mBranch: {CURRENT_BRANCH}\033[0m\n")
+    print(f"\033[92mBranch: {CURRENT_BRANCH}\033[0m")
     print("=================")
     print(f"\033[36mTag: {arg}\033[0m\n")
     print("\033[93mCurrent todos:\033[0m")
