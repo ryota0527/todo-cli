@@ -6,9 +6,6 @@ This is a simple command-line todo management tool for linux environment.
 
 python > 3.8 is recommended.
 
-## Main Features
-
-
 ## Installation
 
 Clone this repository and run: `./install.sh`
