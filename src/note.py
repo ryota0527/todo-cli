@@ -13,7 +13,7 @@ def note(arg):
             break
 
     else:
-        print(f"todo {name} not found")
+        print(f"todo {arg} not found")
         return
 
     name = arg + ".md"
