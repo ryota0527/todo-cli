@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 import json
-from task import make, done, undone, delete, clean
+from task import make, done, undone, delete, clean, rename
 from tag import maketag, rmtag
 from note import note
 from show import show_sort_by_tags, show_sort_by_due, show_find_tag
@@ -41,6 +41,9 @@ def main():
 
         elif command == "make":
             make(sys.argv[2:])
+
+        elif command == "rename":
+            rename(sys.argv[2], sys.argv[3])
 
         elif command == "del":
             delete(sys.argv[2:])

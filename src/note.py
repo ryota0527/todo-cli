@@ -19,3 +19,4 @@ def note(arg):
     name = arg + ".md"
     path = NOTES_DIR / name
     subprocess.run([EDITOR_FOR_NOTES, str(path)])
+

@@ -19,10 +19,11 @@ To check the usage, type `todo` .
 |---------|-------------|
 | `todo init` | initialize |
 | `todo view [-a] [-t] [-f <tag>]` | show current todos |
-| `todo make <name1>, <name2>, ...` | make new todos |
-| `todo done <name1>, <name2>, ...` | mark todos as finished |
+| `todo make <name1> <name2> ...` | make new todos |
+| `todo rename <target> <newname>` | rename existing todo |
+| `todo done <name1> <name2> ...` | mark todos as finished |
 | `todo undone <name1>, <name2>, ...` | mark todos as not finished |
-| `todo del <name1>, <name2>, ...` | remove todos which are not finished |
+| `todo del <name1> <name2> ...` | remove todos which are not finished |
 | `todo note <todo>` | write notes (markdown file) linked to the todo (vim opens) |
 | `todo tag [-rm] <todo name1> <todo name2> ... <tag name>` | add [remove] a tag on the todos |
 | `todo due [-rm] <todo name1> <todo name2> ... <YYYY-MM-DD>` | set [remove] due date for the todos |
