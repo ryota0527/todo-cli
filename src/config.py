@@ -4,8 +4,11 @@ from pathlib import Path
 #settings for datasaving
 HOME = Path.home()
 TODO_DIR = HOME / "todo_cli"
-DATA_DIR = TODO_DIR / "data"
-NOTES_DIR = TODO_DIR / "notes"
+
+CURRENT_BRANCH = "main"
+
+DATA_DIR = TODO_DIR / CURRENT_BRANCH / "data"
+NOTES_DIR = TODO_DIR / CURRENT_BRANCH / "notes"
 
 TODO_SAVE = DATA_DIR / "todos.json"
 

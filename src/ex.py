@@ -8,6 +8,7 @@ from show import show_sort_by_tags, show_sort_by_due, show_find_tag
 from due import dueset, rmdue
 from completion import comp
 from initialize import init
+from branch import switch, show_br
 
 
 def main():
@@ -15,7 +16,7 @@ def main():
         command = sys.argv[1]
 
         if command == "init":
-            init()
+            init("main")
 
         elif command == "view":
             if len(sys.argv) > 2 and "-t" in sys.argv:
@@ -70,6 +71,16 @@ def main():
 
             else:
                 dueset(sys.argv[2:])
+
+        elif command == "branch":
+            if len(sys.argv) > 2:
+                init(sys.argv[2])
+            
+            else:
+                show_br()
+
+        elif command == "switch":
+            switch(sys.argv[2])
 
         elif command == "clean":
             clean(manual=True)
