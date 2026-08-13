@@ -51,9 +51,9 @@ def rename(target, newname):
 
     for item in todos:
         if item["name"] == target:
-            oldpath = NOTES_DIR / item["name"]
+            oldpath = NOTES_DIR / (item["name"] + ".md")
             if oldpath.exists():
-                oldpath.rename(NOTES_DIR / newname)
+                oldpath.rename(str(newname) + ".md")
 
             item["name"] = str(newname)
 
@@ -93,7 +93,7 @@ def delete(args):
 
     for item in todos:
         if item["name"] in args:
-            rmpath = NOTES_DIR / item["name"]
+            rmpath = NOTES_DIR / (item["name"] + ".md")
             if rmpath.exists():
                 rmpath.unlink()
             
@@ -116,7 +116,7 @@ def clean(manual):
     if len(todos) >= n:
         for item in todos:
             if item["done"] == True:
-                rmpath = NOTES_DIR / item["name"]
+                rmpath = NOTES_DIR / (item["name"] + ".md")
                 if rmpath.exists():
                     rmpath.unlink()
             
