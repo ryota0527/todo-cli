@@ -6,6 +6,14 @@ This is a simple command-line todo management tool for linux environment.
 
 python > 3.8 is recommended.
 
+## Main Features
+
+- Basic functionalities of todo management tool are available such as:<br>
+    - make, delete, rename, show todos, mark them as finished
+    - set deadlines, add tags
+- Branch enables more hierarchical todo management; branch means a new isolated todo list derived from the current one, and users can organize groups of todos into different branches without adding many tags to them.
+- Note feature can be used to add remarks, more datails about the task, or subtasks.
+
 ## Installation
 
 Clone this repository and run: `./install.sh`
