@@ -3,7 +3,7 @@ from pathlib import Path
 
 #settings for datasaving
 HOME = Path.home()
-TODO_DIR = HOME / "todo_cli"
+TODO_DIR = HOME / ".todo_cli"
 
 CURRENT_BRANCH = "main"
 

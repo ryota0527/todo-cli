@@ -1,6 +1,6 @@
-# todo-cli
+<h1 align="center">todo-cli</h1>
 
-This is a simple command-line todo management tool for linux environment.
+<strong>Simple command-line todo management tool for linux environment.</strong>
 
 ## Requirements
 
@@ -14,10 +14,17 @@ python > 3.8 is recommended.
 - Branch enables more hierarchical todo management; branch means a new isolated todo list derived from the current one, and users can organize groups of todos into different branches without adding many tags to them.
 - Note feature can be used to add remarks, more datails about the task, or subtasks.
 
-## Installation
+## Download and Installation
 
-Clone this repository and run: `./install.sh`
+| ![](https://upload.wikimedia.org/wikipedia/commons/d/d6/Linux_mascot_tux.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original) |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ![Download for linux](fig_ex/button_download.png)(https://github.com/ryota0527/todo-cli/releases) |
 
+For the latest stable version, download the .tar.gz from the link above.
+
+Or clone this repository (It may contain more bugs or features under testing)
+
+Move to the downloaded directory and run: `./install.sh`<br>
 Then you can use just by running `todo init` .<br>
 To check the usage, type `todo` .
 
