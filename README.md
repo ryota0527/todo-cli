@@ -17,8 +17,8 @@ python > 3.8 is recommended.
 ## Download and Installation
 
 | ![](https://upload.wikimedia.org/wikipedia/commons/d/d6/Linux_mascot_tux.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original) |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ![Download for linux](fig_ex/button_download.png)(https://github.com/ryota0527/todo-cli/releases) |
+|:--------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| [![Download for linux](fig_ex/button_download.png)](https://github.com/ryota0527/todo-cli/releases) |
 
 For the latest stable version, download the .tar.gz from the link above.
 
