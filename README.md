@@ -1,6 +1,8 @@
 <h1 align="center">todo-cli</h1>
 
-<strong>Simple command-line todo management tool for linux environment.</strong>
+<p align="center">
+    <strong>Simple command-line todo management tool for linux environment.</strong>
+</p>
 
 ## Requirements
 
@@ -16,8 +18,8 @@ python > 3.8 is recommended.
 
 ## Download and Installation
 
-| ![](https://upload.wikimedia.org/wikipedia/commons/d/d6/Linux_mascot_tux.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original) |
-|:--------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| ![](fig_ex/250px-Linux_mascot_tux.png) |
+|-----------------------------------------------------------------------------------------------------|
 | [![Download for linux](fig_ex/button_download.png)](https://github.com/ryota0527/todo-cli/releases) |
 
 For the latest stable version, download the .tar.gz from the link above.
