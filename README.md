@@ -70,6 +70,9 @@ Commands below are available and can be run by `todo <command>`.
 - The directory where todos are saved can be changed by editing `TODO_SAVE` in `src/config.py`. If one sets `TODO_SAVE` a directory in the cloud such as Onedrive, one will be able to sync the todos on different devices. Make sure to run `todo init` again after changing `TODO_SAVE`, and copy the existing json file and notes file in the former `TODO_SAVE` directory (it is initially ~/todo_cli).
 
 ## Examples
+
+![todo-cli demo](fig_ex/view_ex.png)
+
 - Initialize: `todo init`
 
 - Add a todo "read an article": `todo make "read an article"`<br>
@@ -84,7 +87,6 @@ Commands below are available and can be run by `todo <command>`.
 
 - View again: `todo view`<br>
 (Output: `- read an article | Due: 2026-08-01 | Tag: research `)<br>
-![todo-cli demo](fig_ex/view_ex.png)
 
 - Add the link to the article as notes: `todo note "read an article"`<br>
 (One can paste the link in the todo file)
